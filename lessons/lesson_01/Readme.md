@@ -157,8 +157,49 @@ The command `npm install --save-dev typescript` installs the TypeScript compiler
 
 - `--save-dev` (or short form -D): Instructs npm to categorize this package under `devDependencies` in your `package.json`
 - `typescript`: Specifies the targer package to download, which includes `tsc` (The typescript compiler)
-
+- `npx tsc --init`: This generate a `tsconfig.json` file.
 some ts code
 
+```ts
+let studentName: string = "Victoire";
+let studentAge: number = 21;
+let isLearning: boolean = true;
 
+console.log(studentName);
+console.log(StudentAge);
+console.log(isLearning);
+
+```
+
+**Let us talk a bit about `npx tsc --init`**
+
+It will generate a file `tsconfig.json`
+
+that file contains couple of settings
+
+- `target`: Specifies the Js language version that Ts should emit. it doesn't install 
+Node.js or determine the Node.js version
+
+In TypeScript, *“emit”* means to generate or output JavaScript code from your TypeScript code.
+
+`module` and `moduleResolution`
+
+These control how Js modules are emitted and how imports are resolved for modern Node.js
+projects
+
+`rootDir` and `outDir`
+
+`rootDir` identifies the source-code directory, and `outDir` specifies where compiled JavaScript files are written
+
+
+`strict` Enables a collection of stricter type-checking rules. We'll use it from the beginning because it encourages safer habits
+
+`sourceMap` Generates source-map files that help debuggers connect the emmitted Js back
+to your original TypeScript source.
+
+
+`noEmitOnError` Prevents the compiler from generating output when it encounters errors during that compilation
+
+`include` and `exclude` These tell TypeScript which source files to include and which 
+directory to exclude from normal source discovery.
 
